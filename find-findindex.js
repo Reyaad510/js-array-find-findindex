@@ -30,4 +30,10 @@ removeUser(users, 'akagen') // {username: 'akagen'}
 removeUser(users, 'akagen') // undefined
 */
 
-function removeUser(usersArray, username) {}
+function removeUser(usersArray, username) {
+  const removeIdx = usersArray.findIndex((val) => {
+    return val.username === username;
+  });
+  if (removeIdx === -1) return;
+  return usersArray.splice(removeIdx, 1)[0];
+}
